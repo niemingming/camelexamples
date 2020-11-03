@@ -1,0 +1,6 @@
+server:
+  port: 8000
+
+camel:
+  springboot:
+    main-run-controller: true

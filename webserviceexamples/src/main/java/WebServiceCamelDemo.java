@@ -70,6 +70,17 @@ public class WebServiceCamelDemo {
                         .convertBodyTo(String.class)
 //                        .setHeader("operationName",constant("sayGood"))
                         .to("log:output");
+                /**对于数组，重复的element就表示数组或者列表了。*/
+                from("jetty:http://0.0.0.0:8888/hello/sayBye")
+                        .to("cxf:" +
+                                "http://localhost:9000/hello/webservice" + // service address
+                                "?wsdlURL=http://localhost:9000/hello/webservice?wsdl" +
+                                "&defaultOperationName=sayBye" +
+//                                "&serviceClass=com.nmm.study.webservice.HelloService" +
+                                "&dataFormat=PAYLOAD")
+                        .convertBodyTo(String.class)
+//                        .setHeader("operationName",constant("sayGood"))
+                        .to("log:output");
             }
         });
     }

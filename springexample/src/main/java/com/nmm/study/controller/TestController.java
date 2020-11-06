@@ -3,6 +3,9 @@ package com.nmm.study.controller;
 import com.nmm.study.entity.WebServiceInfo;
 import com.nmm.study.processor.CxfTestProcessor;
 import org.apache.camel.CamelContext;
+import org.apache.camel.Exchange;
+import org.apache.camel.Message;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +37,14 @@ public class TestController {
                                 + "?wsdlURL=" + webServiceInfo.getWsdlURL()
                                 + "&dataFormat=" + webServiceInfo.getDataFormat()
                                 + (webServiceInfo.getOperationName() == null ? "" : "&defaultOperationName=" + webServiceInfo.getOperationName()))
-                        .convertBodyTo(String.class);
+                        .convertBodyTo(String.class)
+                        .process(new Processor() {
+                            public void process(Exchange exchange) throws Exception {
+                                Message message =  exchange.getMessage();
+                                System.out.println("输出内容：" + message.getBody());
+                                message.setBody("改变了！");
+                            }
+                        });
             }
         });
         return "success";

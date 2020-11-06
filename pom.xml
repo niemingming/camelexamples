@@ -13,6 +13,7 @@
         <module>httpexamples</module>
         <module>webserviceexamples</module>
         <module>springexample</module>
+        <module>jdkxml</module>
     </modules>
 
 

@@ -1,7 +1,7 @@
 dubbo:
   protocol:
     name: dubbo
-    port: 12345
+    port: 11111
   registry:
     address: N/A
     #zookeeper://localhost:3468

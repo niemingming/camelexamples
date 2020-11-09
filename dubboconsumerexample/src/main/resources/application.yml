@@ -1,6 +1,6 @@
 spring:
   application:
-    name: dubboconsumer
+    name: dubboconsumer1
   profiles:
     active: dev
 server:

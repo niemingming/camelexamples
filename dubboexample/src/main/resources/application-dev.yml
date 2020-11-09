@@ -1,0 +1,9 @@
+dubbo:
+  protocol:
+    name: dubbo
+    port: 12345
+  registry:
+    address: N/A
+    #zookeeper://localhost:3468
+  scan:
+    base-packages: com.nmm.dubbo.service

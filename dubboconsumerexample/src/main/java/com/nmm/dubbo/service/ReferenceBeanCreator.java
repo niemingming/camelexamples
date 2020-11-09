@@ -15,7 +15,6 @@ import java.util.Map;
 public class ReferenceBeanCreator extends ReferenceAnnotationBeanPostProcessor {
 
     public ReferenceBeanCreator() {
-        System.out.println(1111);
     }
 
     public Object createReference(Class injectClass, Method method, Map<String,Object> map) throws Exception {

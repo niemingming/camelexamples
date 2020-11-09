@@ -3,7 +3,7 @@ dubbo:
     name: dubbo
     port: 11111
   registry:
-    address: N/A
+    address: zookeeper://localhost:2181
     #zookeeper://localhost:3468
   scan:
     base-packages: com.nmm.dubbo.service

@@ -15,7 +15,7 @@ import java.util.Map;
 @RestController
 public class TestController implements InitializingBean {
 
-//    @DubboReference(version = "1.0.0",url = "dubbo://127.0.0.1:11111")
+//    @DubboReference(version = "1.0.0")
     private HelloService helloService;
     @Autowired
     private ReferenceBeanCreator beanCreator;
@@ -29,7 +29,7 @@ public class TestController implements InitializingBean {
     public String dynamic(String name) throws Exception {
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("version","1.0.0");
-        map.put("url","dubbo://127.0.0.1:11111");
+//        map.put("url","dubbo://127.0.0.1:11111");
         Method method = HelloService.class.getDeclaredMethod("sayHello",String.class);
 
         helloService = (HelloService) beanCreator.createReference(HelloService.class,method,map);

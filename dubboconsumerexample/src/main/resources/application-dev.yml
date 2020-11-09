@@ -4,3 +4,5 @@ dubbo:
       level: INFO
   consumer: #配置，客户端在调用时检查依赖注入，不在启动时检查。
     check: false
+  registry:
+    address: zookeeper://localhost:2181

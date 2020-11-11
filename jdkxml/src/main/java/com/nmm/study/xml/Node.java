@@ -1,5 +1,7 @@
 package com.nmm.study.xml;
 
+import com.alibaba.fastjson.JSONObject;
+
 import javax.tools.JavaCompiler;
 import javax.tools.JavaFileObject;
 import javax.tools.ToolProvider;
@@ -12,6 +14,8 @@ import java.util.Arrays;
 public class Node {
 
     public static void main(String[] args) throws Exception{
+        System.out.println(int.class.getName());
+        JSONObject.toJSONString("hello world");
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         JavaDynamicComplierManager complierManager = new JavaDynamicComplierManager(compiler.getStandardFileManager(null,null,null));
         JavaCompiler.CompilationTask task = compiler.getTask(null,complierManager,null,null,null,getComplieFile());

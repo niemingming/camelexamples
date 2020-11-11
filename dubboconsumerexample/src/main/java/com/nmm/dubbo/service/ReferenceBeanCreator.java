@@ -33,8 +33,8 @@ public class ReferenceBeanCreator extends ReferenceAnnotationBeanPostProcessor{
         super.setApplicationContext(applicationContext);
         this.applicationContext = applicationContext;
         DefaultListableBeanFactory factory = (DefaultListableBeanFactory) ((ConfigurableApplicationContext)applicationContext).getBeanFactory();
-        factory.registerSingleton("testconsumer",new RegistryConfig("zookeeper://localhost:2181"));
-        System.out.println("注册完成");
+//        factory.registerSingleton("testconsumer",new RegistryConfig("zookeeper://localhost:2181"));
+//        System.out.println("注册完成");
     }
 
     private class ReferenceBeanInjectedElement extends InjectionMetadata.InjectedElement {
